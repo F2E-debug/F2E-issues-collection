@@ -1,4 +1,4 @@
-問題標題
+[IE8] 問題描述
 -------------------
 
 問題內容
@@ -8,6 +8,5 @@
 
 解決內容
 
-`````
-備註
-`````
+-------
+[基本format使用參考](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
