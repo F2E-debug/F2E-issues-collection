@@ -7,3 +7,5 @@
 ---------------------
 
 於載入或翻轉手持裝置時設置viewport的width，一般預設為width=device-width，當網頁無RWD效果以一般大小呈現時，需將width設為最低media query支援的width。
+
+請注意: 需拿掉initial-scale=1.0設定才有作用。
