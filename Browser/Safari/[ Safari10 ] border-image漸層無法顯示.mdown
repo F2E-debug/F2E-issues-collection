@@ -1,0 +1,26 @@
+# Safari10
+border-image使用漸層Safari10無法顯示問題
+
+## Browser
+`Safari`
+
+## 處理方式
+將border樣式拆開寫
+```css
+/*原css*/
+  -moz-border-image: -moz-linear-gradient(left, #008be4, #00ccff);
+  -webkit-border-image: -webkit-linear-gradient(left, #008be4, #00ccff);
+  border-image: linear-gradient(to right, #008be4, #00ccff);
+  -webkit-border-image-slice: 1;
+  border-image-slice: 1;
+  border: 2px solid #008be4 \9;
+  border: 2px solid transparent;
+/*修改後css*/
+	-moz-border-image: -moz-linear-gradient(left, #008be4, #00ccff);
+  -webkit-border-image: -webkit-linear-gradient(left, #008be4, #00ccff);
+  border-image: linear-gradient(to right, #008be4, #00ccff);
+  -webkit-border-image-slice: 1;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-style: solid;
+```
