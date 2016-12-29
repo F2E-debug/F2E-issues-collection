@@ -1,0 +1,13 @@
+# IE8不支援background-size
+圖片在IE8上因不支援background-size所以造成圖片異常
+
+## Browser
+`IE`
+
+## 處理方式
+在css補上filter scale
+```css
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://xxxxxx.com/images/xxxx.png',sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://xxxxxx.com/images/xxxx.png',sizingMethod='scale')";
+	background: transparent;
+```
