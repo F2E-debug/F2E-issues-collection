@@ -1,0 +1,23 @@
+# Jquery Valide add method 於判斷式內無法執行
+API取資料時add method 於複雜的判斷式內會失去效果造成無法驗證
+
+## Browser
+`All`
+
+## 處理方式
+先用object儲存每個rules及message，再傳給Validate的function
+```js
+	var Rules = {};
+  var Messages = {};
+
+  if(x == '') {
+  	Rules['form1'] = {
+        required: true
+    }
+    Messages['form1'] = {
+        required: '此題為必填'
+    }
+  }
+
+  validate(Rules, Messages);
+```
