@@ -8,13 +8,13 @@
 改以jsonp格式取值(補jsonCallback: 'jsonp名稱')
 如下:
 ```jsonp
-	zzz({
+zzz({
     "id": "123",
     "price": 2000,
-	});
+});
 ```
 ```js
-	$.ajax({
+$.ajax({
     url: domain +'product.asmx/GetPDSupportTab?website='+lang+'&pdhashedid='+pdhashedid,
     dataType: 'jsonp',
     jsonpCallback:"zzz", 
