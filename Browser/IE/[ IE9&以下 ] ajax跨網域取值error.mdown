@@ -1,0 +1,24 @@
+# IE9&以下ajax跨網域取值error
+在IE9及以下情況下ajax無法跨網域取值，回傳error
+
+## Browser
+`IE9` `IE9以下`
+
+## 處理方式
+改以jsonp格式取值(補jsonCallback: 'jsonp名稱')
+如下:
+```jsonp
+	zzz({
+    "id": "123",
+    "price": 2000,
+	});
+```
+```js
+	$.ajax({
+    url: domain +'product.asmx/GetPDSupportTab?website='+lang+'&pdhashedid='+pdhashedid,
+    dataType: 'jsonp',
+    jsonpCallback:"zzz", 
+    method: 'GET',
+    success: function(data) {}
+  });
+```
