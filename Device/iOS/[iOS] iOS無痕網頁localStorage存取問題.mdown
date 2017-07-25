@@ -1,5 +1,4 @@
 # [iOS] iOS無痕網頁localStorage存取問題
--------------------
 error: QuotaExceededError: Dom exception 22: An attempt was made to add something to storage that exceeded the quota
 
 iOS針對無痕網頁會有localStorage存取問題。
@@ -9,7 +8,6 @@ iOS針對無痕網頁會有localStorage存取問題。
 `All`
 
 ## 解決方法
----------------------
 
 加入try/catch判斷程式，程式碼如下:
 
