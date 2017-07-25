@@ -1,0 +1,29 @@
+#[iOS] iOS無痕網頁localStorage存取問題
+-------------------
+error: QuotaExceededError: Dom exception 22: An attempt was made to add something to storage that exceeded the quota
+
+iOS針對無痕網頁會有localStorage存取問題。
+造成網頁某些功能異常。
+
+## Browser
+`All`
+
+##解決方法
+---------------------
+
+加入try/catch判斷程式，程式碼如下:
+
+```js
+if (typeof localStorage === 'object') {
+    try {
+        localStorage.setItem('localStorage', 1);
+        localStorage.removeItem('localStorage');
+    } catch (e) {
+        Storage.prototype._setItem = Storage.prototype.setItem;
+        Storage.prototype.setItem = function() {};
+        alert('Your web browser does not support storing settings locally. In Safari, the most common cause of this is using "Private Browsing Mode". Some settings may not save or some features may not work properly for you.');
+    }
+}
+```
+
+source: [https://gist.github.com/philfreo/68ea3cd980d72383c951](https://gist.github.com/philfreo/68ea3cd980d72383c951)
